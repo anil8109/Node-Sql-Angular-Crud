@@ -1,0 +1,30 @@
+<div class="container" style="padding-top: 131px;
+padding-left: 190px;">
+    <table class="table">
+        <thead>
+          <th> Name</th>
+          <th> Email</th>
+          <th> Role</th>
+          <th> Address </th>
+          <th> Action </th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of data">
+            <td>{{user.name}}</td>
+            <td>    
+              {{ user.email }}
+            </td>
+            <td>
+                {{ user.role }} 
+            </td>
+            <td>
+                {{ user.address }} 
+            </td>
+            <td>
+                <a [routerLink]="['/user/edit',user.id]" > <button class="btn btn-primary m-1" >Edit</button> </a> 
+                <button class="btn btn-danger m-1" (click)="deleteUser(user)" >Delete</button> 
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
